@@ -17,7 +17,7 @@ This is a fully functioning Google Books API search engine built using the MERN 
 This application can be easily installed by cloning the repo and type "npm i" in the command line once you're in the root directory. Once it's finish installing type "npm start" to initalize the application. You will also require MongoDB if you don't have it installed. If not, follow the installation process on the MongoDB website.
         
 ## Usage
-To use this application you can use the deployed link , install the application onto your local machine, or clone this repository and run it on the local port.
+To use this application you can use the deployed link https://fathomless-island-71331.herokuapp.com/, install the application onto your local machine, or clone this repository and run it on the local port.
 
 * Homepage
 <br><img src="./assets/img/SC_homepage.png" width ="300">
