@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
-import { saveBook, searchGoogleBooks } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
@@ -13,7 +12,7 @@ const SearchBooks = () => {
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
+  const [saveBook] = useMutation(SAVE_BOOK);
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
@@ -126,7 +125,7 @@ const SearchBooks = () => {
                   <Card.Text>
                     {book.description}
                     <br/>
-                    <Link to = {book.link}>Buy this book!</Link>
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">Buy this book!</a>
                     </Card.Text>
                   {Auth.loggedIn() && (
                     <Button
